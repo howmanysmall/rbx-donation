@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
-const programmingLanguagesRouter = require('./routes/programmingLanguages');
 const playerGamePassesRouter = require('./routes/playerGamePasses');
 
 app.use(bodyParser.json());
@@ -16,7 +15,6 @@ app.get('/', (req, res) => {
   res.json({ message: 'ok' });
 })
 
-app.use('/programming-languages', programmingLanguagesRouter);
 app.use('/player-game-passes', playerGamePassesRouter);
 
 /* Error handler middleware */
